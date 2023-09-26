@@ -14,4 +14,11 @@ vehicles in the streets.
 '''
 
 import pandas as pd
-print(pd.__version__)
+
+# 1.	Create a new single data set that can be used to output a table that lists the number of persons injured 
+# or killed in traffic accidents in each neighbourhood of Toronto in the last 4 years. (You will need to extract 
+# the following information: Year, vehicles in the street, district, and Neighbourhood)
+
+data_files = ['2015_KSI.csv','2016_KSI.csv','2017_KSI.csv','2018_KSI.csv']
+df = pd.concat((pd.read_csv(filename) for filename in data_files),ignore_index=True)
+print(df)
